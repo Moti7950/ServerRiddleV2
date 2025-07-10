@@ -2,6 +2,7 @@ import express from "express";
 import fs from "fs/promises";
 
 const UserRouters = express.Router()
+const UsersDBPath = ".././DB/TestingFile.json";
 
 UserRouters.get("/api/players", (req,res)=> res.send("Get all players \n"))
 
@@ -14,7 +15,7 @@ UserRouters.post("/api/players", async (req,res)=>
             {
                 return res.status(400).json({err: "Missing paremeters! 😢"})
             }
-            await userCreate(DBPath, name, TimeStatistics);
+            await userCreate(UsersDBPath, name, TimeStatistics);
     
             res.status(201).json({message: "Success to write a new riddle"})
         }

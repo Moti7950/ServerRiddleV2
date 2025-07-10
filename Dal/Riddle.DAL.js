@@ -1,18 +1,7 @@
 import { writeFile } from "node:fs/promises"
 import {readFile} from "node:fs/promises"
 import {Read} from "./Read.js"
-
-//Utiliti function for gave the id
-function MaxId(DBPath)
-{
-    let counter = 1;
-    JSON.parse(DBPath).forEach(item => {
-        if ("ID" in item){
-            counter += 1;
-        }
-    });
-    return counter; 
-}
+import { MaxId } from "../Utils/UtilityFunction.js"
 //function create for object file (.Json)
 export async function RiddleCreate(DBPath, name, TimeStatistics)
 {

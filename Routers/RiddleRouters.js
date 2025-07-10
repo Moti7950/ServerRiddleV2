@@ -1,10 +1,11 @@
 import express from "express";
 import fs from "fs/promises";
 import { Create } from "../Dal/Create.js";
+import { RiddleCreate } from "../Dal/Riddle.DAL.js";
 
 const RiddleRouters = express.Router()
 
-const DBPath = "../.././DBServer/DB/TestingFile.json";
+const RiddleDBPath = ".././DB/TestingFile.json";
 
 RiddleRouters.delete("/api/riddles/:id", (req,res)=> res.send("Get all riddles \n"))
 
@@ -19,7 +20,7 @@ RiddleRouters.post("/api/riddles", async (req,res)=> {
             return res.status(400).json({err: "Missing paremeters! 😢"})
         }
         //need to write create for riddle
-        await Create(DBPath, name, TimeStatistics);
+        await RiddleCreate(RiddleDBPath, name, TimeStatistics);
 
         res.status(201).json({message: "Success to write a new riddle"})
     }

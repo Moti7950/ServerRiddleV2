@@ -1,0 +1,37 @@
+[
+  {
+    "ID": 1,
+    "name": "Alpha",
+    "TimeStatistics": 3
+  },
+  {
+    "ID": 2,
+    "name": "Beta",
+    "TimeStatistics": 5
+  },
+  {
+    "ID": 3,
+    "name": "Delta",
+    "TimeStatistics": 4
+  },
+  {
+    "ID": 4,
+    "name": "Epsilon",
+    "TimeStatistics": 1
+  },
+  {
+    "ID": 5,
+    "name": "Gamma",
+    "TimeStatistics": 2
+  },
+  {
+    "ID": 6,
+    "name": "test",
+    "TimeStatistics": "5"
+  },
+  {
+    "ID": 7,
+    "name": "test",
+    "TimeStatistics": "5"
+  }
+]
