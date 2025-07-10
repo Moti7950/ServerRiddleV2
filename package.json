@@ -1,0 +1,12 @@
+{
+  "name": "riddle-server",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "ExpressServer.js",
+  "scripts": {
+    "start": "node Services/ExpressServer.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

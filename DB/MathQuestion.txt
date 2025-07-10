@@ -1,0 +1,63 @@
+[export default [
+  {
+    id: 1,
+    name: "Easy Math",
+    taskDescription: "What is 5 + 3?",
+    correctAnswer: "8"
+  },
+  {
+    id: 2,
+    name: "Easy Math",
+    taskDescription: "What is 10 - 6?",
+    correctAnswer: "4"
+  },
+  {
+    id: 3,
+    name: "Multiplication",
+    taskDescription: "What is 7 × 6?",
+    correctAnswer: "42"
+  },
+  {
+    id: 4,
+    name: "Division",
+    taskDescription: "What is 20 ÷ 5?",
+    correctAnswer: "4"
+  },
+  {
+    id: 5,
+    name: "Order of Operations",
+    taskDescription: "What is 2 + 3 × 4?",
+    correctAnswer: "14"
+  },
+  {
+    id: 6,
+    name: "Negative Numbers",
+    taskDescription: "What is -3 + 7?",
+    correctAnswer: "4"
+  },
+  {
+    id: 7,
+    name: "Squares",
+    taskDescription: "What is the square of 9?",
+    correctAnswer: "81"
+  },
+  {
+    id: 8,
+    name: "Fractions",
+    taskDescription: "What is 1/2 + 1/4?",
+    correctAnswer: "0.75"
+  },
+  {
+    id: 9,
+    name: "Percentages",
+    taskDescription: "What is 25% of 200?",
+    correctAnswer: "50"
+  },
+  {
+    id: 10,
+    name: "Decimals",
+    taskDescription: "What is 0.3 + 0.6?",
+    correctAnswer: "0.9"
+  }
+];
+]
