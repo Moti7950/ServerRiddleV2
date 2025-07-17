@@ -1,9 +1,8 @@
 import { writeFile } from "node:fs/promises"
 import {readFile} from "node:fs/promises"
-import {Read} from "./Read.js"
 import { MaxId } from "../Utils/UtilityFunction.js"
 //function create for object file (.Json)
-export async function RiddleCreate(DBPath, name, TimeStatistics)
+export async function riddleCreate(DBPath, name, TimeStatistics)
 {
     const Readi = await Read(DBPath)
     let DBCopyToJson = await JSON.parse(Readi)
@@ -32,7 +31,7 @@ export async function RiddleCreate(DBPath, name, TimeStatistics)
     }
 }
 
-async function RiddleUpdate(DBPath, IDchenge)
+export async function riddleUpdate(DBPath, IDchenge)
 {
     const Readi = await Read(DBPath)
     Readi.forEach(idnum => {
@@ -43,7 +42,7 @@ async function RiddleUpdate(DBPath, IDchenge)
     });
 }
 
- export async function RiddleRead(path)
+ export async function riddleRead(path)
 {
     //Get only string file (.txt)
     try
@@ -60,7 +59,7 @@ async function RiddleUpdate(DBPath, IDchenge)
     }
 }
 
-async function RiddleDelete(DBPath, IDDelete)
+export async function riddleDelete(DBPath, IDDelete)
 {
     const Readi = await Read(DBPath)
     const newDB = Readi.filter(item => item.ID !== IDDelete)

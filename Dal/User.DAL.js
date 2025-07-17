@@ -1,26 +1,14 @@
 import { writeFile } from "node:fs/promises"
-import {readFile} from "node:fs/promises"
-import {Read} from "./Read.js"
-import { MaxId } from "../Utils/UtilityFunction.js"
+import { readFile } from "node:fs/promises"
+import { Read } from "./Read.js"
+import { newUser } from "../Utils/UtilityFunction.js"
 
 //function create for object file (.Json)
-export async function userCreate(DBPath, name, TimeStatistics)
+export async function userCreate(DBPath,templitJson)
 {
+    //add newUser function!
     const Readi = await Read(DBPath)
     let DBCopyToJson = await JSON.parse(Readi)
-    // create new obj for added 
-    const templitJson =
-    {
-        // need atomatic counter,
-        "ID": MaxId(Readi),
-        "name": name,
-        "TimeStatistics": TimeStatistics
-    };
-
-    // log print if create successful
-    // console.log("Cehck print from func Create: ", templitJson);
-    // Importent!!! we need to copy the DB for update.
-    
     try
     {
         DBCopyToJson.push(templitJson)
@@ -33,7 +21,7 @@ export async function userCreate(DBPath, name, TimeStatistics)
     }
 }
 
-async function userUpdate(DBPath, IDchenge)
+export async function userUpdate(DBPath, IDchenge)
 {
     const Readi = await Read(DBPath)
     Readi.forEach(idnum => {
@@ -61,7 +49,7 @@ async function userUpdate(DBPath, IDchenge)
     }
 }
 
-async function userDelete(DBPath, IDDelete)
+export async function userDelete(DBPath, IDDelete)
 {
     const Readi = await Read(DBPath)
     const newDB = Readi.filter(item => item.ID !== IDDelete)
