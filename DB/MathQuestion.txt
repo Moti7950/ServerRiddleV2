@@ -1,4 +1,4 @@
-[export default [
+[
   {
     id: 1,
     name: "Easy Math",
@@ -60,4 +60,4 @@
     correctAnswer: "0.9"
   }
 ];
-]
+
