@@ -41,3 +41,4 @@ export async function newUser(DBPath, name, TimeStatistics)
     };
     return templitJson
 }
+

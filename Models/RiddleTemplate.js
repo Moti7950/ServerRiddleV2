@@ -1,5 +1,12 @@
-//המבנה של החידות הם כך 
-// id: 1,
-// name: "Easy Math",
-// taskDescription: "What is 5 + 3?",
- // correctAnswer: "8
+// import readline from 'readline-sync';
+
+// export function riddleTemplate()
+// {
+//     const riddleTemplit = 
+//     {
+//         name: readline.question("Plese enter a name: "),
+//         taskDescription: readline.question("Please enter a question: "),
+//         correctAnswer: readline.question("Please enter an answer: "),
+//     }
+//     return riddleTemplit;
+// }
