@@ -10,7 +10,7 @@ const gameServer = express()
 gameServer.use(express.json())
 
 //path to game reqwustclea
-gameServer.use("/api/users/", UserRouters);
-gameServer.use("/api/riddles/", RiddleRouters);
+gameServer.use("/api/players", UserRouters);
+gameServer.use("/api/riddles", RiddleRouters);
 
 gameServer.listen(PORT, ()=> console.log(`Im listing to you at port ${PORT} 👁️`));
