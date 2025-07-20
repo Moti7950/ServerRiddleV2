@@ -1,24 +1,21 @@
 import express from "express";
 import fs from "fs/promises";
 import { riddleCreate } from "../Dal/Riddle.DAL.js";
+import {createNewRiddle} from "../Dal/CRUD_To_mongo_riddle.js"
 
 const RiddleRouters = express.Router()
 
 const RiddleDBPath = ".././DB/TestingFile.json";
 
-RiddleRouters.delete("/api/riddles/delete/:id", (req, res) => res.send("Get all riddles \n"))
+RiddleRouters.delete("delete/:id", (req, res) => res.send("Get all riddles \n"))
 
-RiddleRouters.get("/api/riddles/show", (req, res) => res.send("Get all riddles \n"))
+RiddleRouters.get("/show", (req, res) => res.send("Get all riddles \n"))
 
-RiddleRouters.post("/api/riddles/create", async (req, res) => {
+RiddleRouters.post("/create", async (req, res) => {
     try {
-        const { name, TimeStatistics } = req.body
-        if (!name || !TimeStatistics) {
-            return res.status(400).json({ err: "Missing paremeters! 😢" })
-        }
-        //need to write create for riddle
-        await riddleCreate(RiddleDBPath, name, TimeStatistics);
-
+        console.log("Hi from create!");
+        console.log("Received body:", req.body.name);
+        createNewRiddle(JSON.stringify(req.body))
         res.status(201).json({ message: "Success to write a new riddle" })
     }
     catch (err) {

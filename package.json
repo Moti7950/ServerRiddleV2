@@ -4,11 +4,12 @@
   "type": "module",
   "main": "ExpressServer.js",
   "scripts": {
-    "start": "node Services/ExpressServer.js"
+    "start": "node --env-file=.env Services/ExpressServer.js"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
     "express": "^4.18.2",
-    "mongodb": "^6.17.0"
+    "mongodb": "^6.17.0",
+    "readline-sync": "^1.4.10"
   }
 }
