@@ -4,6 +4,8 @@ import { riddleCreate } from "../Dal/Riddle.DAL.js";
 import {createNewRiddle} from "../Dal/CRUD_To_mongo_riddle.js"
 
 const RiddleRouters = express.Router()
+RiddleRouters.use(express.json())
+
 
 const RiddleDBPath = ".././DB/TestingFile.json";
 
