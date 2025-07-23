@@ -40,13 +40,13 @@ export async function redAllRiddle() {
     }
 }
 
-export async function updateOneRiddle()
+export async function updateOneRiddle(idChenge ,newIteme)
 {
- await mongoServer.connect(idChenge ,newIteme); 
+ await mongoServer.connect(); 
     try {
         const DBname = mongoServer.db("Riddle_DB")
         const DBTableName = DBname.collection("MathQuestion")
-        const result = DBTableName.updateOne({_id:`${idChenge}`},{$set: newIteme})
+        const result = await DBTableName.updateOne({ObjectId:`${idChenge}`},{$set: newIteme})
         // console.log("All riddle:", result);
         // return result;
     }
