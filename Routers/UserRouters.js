@@ -16,7 +16,7 @@ UserRouters.post("/create", async (req, res) => {
     try 
     {    console.log("Hi from create!");
     console.log("Received body:", req.body.name);
-    createPlayers(JSON.stringify(req.body.name));
+    createPlayers(req.body.name);
     res.status(201).json({ message: "Success to write a new riddle" })
     }
     catch (err) {
