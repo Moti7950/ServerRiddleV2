@@ -2,9 +2,6 @@ import express from "express"
 import UserRouters from "./UserRouters.js"
 import RiddleRouters from "./RiddleRouters.js"
 
-// const PORT = 9076;
-
-//יש שגיאה ביצירת המשתמש לכן הקוד נופל צריך לבדוק שוב איך ליצור נכון את המשתמש
 const gameServer = express()
 
 gameServer.use(express.json())
