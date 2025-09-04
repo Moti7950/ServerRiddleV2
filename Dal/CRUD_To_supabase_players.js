@@ -3,10 +3,32 @@ import dotenv from "dotenv";
 dotenv.config({ path: '../.env' });
 
 const DBUserName = "gamemembers"
-// console.log("SQL_URL:", process.env.SQL_URL);
-// console.log("PUBLIC_ANON_API:", process.env.PUBLIC_ANON_API);
+console.log("SQL_URL:", process.env.SQL_URL);
+console.log("PUBLIC_ANON_API:", process.env.PUBLIC_ANON_API);
 
 const supabase = createClient(process.env.SQL_URL, process.env.PUBLIC_ANON_API);
+
+// checkUserLogin
+// Work V
+export async function checkUserLogin(name, password) {
+  if (!name || !password) return false;
+
+  const { data, error } = await supabase
+    .from(DBUserName) 
+    .select("id")
+    .eq("name", name)
+    .eq("password", password)
+    .limit(1);
+
+  if (error) {
+    console.error("Supabase error:", error.message);
+    return false;
+  }
+
+  return data && data.length > 0;
+}
+
+// console.log(await checkUserLogin("Moti","1234"));
 
 
 //insert data
@@ -28,6 +50,7 @@ export async function readAllPlayers()
     .select()
     return error || data
 }
+
 
 //update from DB
 //work V
@@ -74,6 +97,10 @@ export async function serchById(idOrName)
     if(data.length === 0 || error) return false;
     return true;
 }
+
+
+
+
 
 // console.log(await updeateTime(3,2.5));
 // console.log(await deleteById(2));
